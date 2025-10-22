@@ -1,0 +1,44 @@
+# File: web_vulnerabilities/index.html
+# Title: Web form vulnerabilities demo (safe local tab)
+# Author: ishma-cybsec
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web Vulnerability Demo</title>
+</head>
+<body>
+  <h1>Web Form Vulnerability Demo (Local Only)</h1>
+
+  <h2>1) XSS (Reflected) - Vulnerable</h2>
+  <form method="post" action="/vuln_xss">
+    Name: <input name="name" type="text" />
+    <button type="submit">Submit (vulnerable)</button>
+  </form>
+
+  <h2>1b) XSS - Fixed (escaped)</h2>
+  <form method="post" action="/safe_xss">
+    Name: <input name="name" type="text" />
+    <button type="submit">Submit (safe)</button>
+  </form>
+
+  <h2>2) SQL Injection - Vulnerable</h2>
+  <p>Try username `alice` or attempt a basic injection (local only)</p>
+  <form method="post" action="/vuln_sql">
+    Username: <input name="username" type="text" /><br/>
+    Password: <input name="password" type="password" /><br/>
+    <button type="submit">Login (vulnerable)</button>
+  </form>
+
+  <h2>2b) SQL Injection - Fixed (parameterized)</h2>
+  <form method="post" action="/safe_sql">
+    Username: <input name="username" type="text" /><br/>
+    Password: <input name="password" type="password" /><br/>
+    <button type="submit">Login (safe)</button>
+  </form>
+
+  <hr/>
+  <p><small>Local demo for educational purposes only. Do not run against remote/production servers.</small></p>
+</body>
+</html>
