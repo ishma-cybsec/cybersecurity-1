@@ -2,6 +2,7 @@
 # Title: File Encryption/Decryption Tool
 # Author: ishma-cybsec
 
+# interactive_encrypt_decrypt.py
 def encrypt(text, key):
     result = ""
     for char in text:
@@ -14,22 +15,17 @@ def decrypt(text, key):
         result += chr((ord(char) - key) % 256)
     return result
 
-choice = input("Do you want to (E)ncrypt or (D)ecrypt? ").upper()
-filename = input("Enter file name (with extension): ")
+mode = input("Do you want to Encrypt or Decrypt? (E/D): ").strip().upper()
+text = input("Enter the text: ")
 key = int(input("Enter key (number): "))
 
-with open(filename, "r") as f:
-    content = f.read()
-
-if choice == 'E':
-    encrypted = encrypt(content, key)
-    with open("encrypted_" + filename, "w") as f:
-        f.write(encrypted)
-    print(f"File encrypted and saved as encrypted_{filename}")
-elif choice == 'D':
-    decrypted = decrypt(content, key)
-    with open("decrypted_" + filename, "w") as f:
-        f.write(decrypted)
-    print(f"File decrypted and saved as decrypted_{filename}")
+if mode == 'E':
+    out = encrypt(text, key)
+    print("\nEncrypted text:")
+    print(out)
+elif mode == 'D':
+    out = decrypt(text, key)
+    print("\nDecrypted text:")
+    print(out)
 else:
-    print("Invalid choice!")
+    print("Invalid choice! Please type E or D.")
