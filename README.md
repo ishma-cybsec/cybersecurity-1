@@ -27,12 +27,7 @@ Each project demonstrates hands-on skills in password security, authentication, 
 - **Description:** Encrypts and decrypts text files using symmetric encryption (AES or simple cipher).  
 - **Skills demonstrated:** Applied cryptography, file handling, secure storage.
 
-### 5. Keylogger Detector / Monitoring Script (Optional)
-- **File:** `keylogger_detector/detector.py`  
-- **Description:** Simulates scanning for suspicious processes and alerts the user.  
-- **Skills demonstrated:** System monitoring, process handling, basic malware awareness.
-
-### 6. Web Form Vulnerability Demo (Optional)
+### 5. Web Form Vulnerability Demo (Optional)
 - **File:** `web_vulnerabilities/` (contains HTML + Python/Flask or PHP)  
 - **Description:** Demonstrates safe vulnerabilities like XSS or SQL Injection in a local environment, with secure mitigation.  
 - **Skills demonstrated:** Web security, input validation, safe coding practices.
